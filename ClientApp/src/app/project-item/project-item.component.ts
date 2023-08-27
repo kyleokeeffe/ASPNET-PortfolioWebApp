@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ProjectItem } from '../projectItem';
 
 @Component({
   selector: 'app-project-item',
@@ -11,5 +12,5 @@ export class ProjectItemComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  @Input() projectItem!: ProjectItem;
 }

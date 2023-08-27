@@ -1,1 +1,10 @@
-<p>project-item works!</p>
+<div class="m-2 card" style="width:400px">
+    <div class="card-body">
+        <h4 class="card-title">{{ projectItem.name }}</h4>
+        <p class="card-text">Description<br>{{ projectItem.description }}</p>
+        <p class="card-text">Role<br>Team contributor</p>
+        <p class="card-text"><a href='{{ projectItem.link }}'>Link to code (GitHub)</a><br></p>
+
+    </div>
+    <img class="card-img-bottom" [src]="projectItem.photo" alt="Image of project screenshot" style="width:100%">
+</div>
