@@ -12,17 +12,17 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectItemComponent } from './project-item/project-item.component';
 import { AboutComponent } from './about/about.component';
+import { ServicesComponent } from './services/services.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     ProjectsComponent,
     ProjectItemComponent,
-    AboutComponent
+    AboutComponent,
+    ServicesComponent
 
 
   ],
@@ -32,10 +32,9 @@ import { AboutComponent } from './about/about.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
       { path: 'projects', component: ProjectsComponent },
       { path: 'about', component: AboutComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'services', component: ServicesComponent },
     ])
   ],
   providers: [],
