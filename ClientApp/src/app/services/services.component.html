@@ -1,39 +1,222 @@
-<div class="container">
-    <!-- List group for service listing -->
-    <ul class="list-group">
-        <li class="list-group-item">
-            <div class="card">
-                <h4 class="card-title">Web Development</h4>
-                <div class="card-text">
-                    <ul class="list-group">
-                        <li class="list-group-item">HTML5/CSS3, Javascript, Nodejs, Express</li>
-                        <li class="list-group-item">MEAN implementation stack</li>
-                    </ul>
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+            </svg>
+            <div class="container">
+                <div class="carousel-caption text-start">
+                    <h1>Web Development</h1>
+                    <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.
+                    </p>
+                    <p><a (click)="ShowWebDev()" class="btn btn-lg btn-primary">Sign up today</a></p>
                 </div>
             </div>
-        </li>
-        <li class="list-group-item">
-            <div class="card">
-                <h4 class="card-title">General Programming</h4>
-                <div class="card-text">
-                    <ul class="list-group">
-                        <li class="list-group-item">C#</li>
-                        <li class="list-group-item">Java</li>
-                    </ul>
+        </div>
+        <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+            </svg>
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Standalone Software</h1>
+                    <p>Some representative placeholder content for the second slide of the carousel.</p>
+                    <p><a (click)="ShowStandProg()" class="btn btn-lg btn-primary">Learn more</a></p>
                 </div>
             </div>
-        </li>
-        <li class="list-group-item">
-            <div class="card">
-                <h4 class="card-title">Database Management</h4>
-                <div class="card-text">
-                    <ul class="list-group">
-                        <li class="list-group-item">Oracle SQL</li>
-                        <li class="list-group-item">MongoDB</li>
-                    </ul>
+        </div>
+        <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+            </svg>
+            <div class="container">
+                <div class="carousel-caption text-end">
+                    <h1>Database Administration</h1>
+                    <p>Some representative placeholder content for the third slide of this carousel.</p>
+                    <p><a (click)="ShowDbAdmin()" class="btn btn-lg btn-primary">Browse gallery</a></p>
                 </div>
             </div>
-        </li>
+        </div>
 
-    </ul>
+        <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+            </svg>
+            <div class="container">
+                <div class="carousel-caption text-end">
+                    <h1>Service Hosting</h1>
+                    <p>Some representative placeholder content for the third slide of this carousel.</p>
+                    <p><a (click)="ShowResHost()" class="btn btn-lg btn-primary">Browse gallery</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
+<div *ngIf="webDevDiv">
+    <h3> Web Development Services</h3>
+    <div class="row">
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+            </svg>
+            <h2 class="fw-normal">Full Stack</h2>
+            <p> MEAN Stack, ASP.Net, EJS</p>
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+            </svg>
+            <h2 class="fw-normal">Traditional Web Dev</h2>
+            <p>HTML5, CSS3, JavaScript</p>
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+            <!--ToDo: Add link to project page with appropriate filters applied -->
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+            </svg>
+            <h2 class="fw-normal">Heading</h2>
+            <p>And lastly this, the third column of representative placeholder content.</p>
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+</div>
+
+<div *ngIf="standProgDiv">
+    <h3> StandAlone Software</h3>
+    <div class="row">
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+            </svg>
+            <h2 class="fw-normal">C#</h2>
+            <p> WPF, DB integration, EF core, ML.NET </p>
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+            </svg>
+            <h2 class="fw-normal">Java</h2>
+            <p>JFrame gui, RPA dev</p>
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+            <!--ToDo: Add link to project page with appropriate filters applied -->
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+            </svg>
+            <h2 class="fw-normal">Python</h2>
+            <p>IOT development, machine learning models, natural language processing</p>
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+</div>
+<div *ngIf="dbAdminDiv">
+    <h3>Database Administration</h3>
+    <div class="row">
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+            </svg>
+            <h2 class="fw-normal">Oracle</h2>
+            <p> SQL Developer, PL SQL development</p>
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+            </svg>
+            <h2 class="fw-normal">SQL Server</h2>
+            <p>SSMS client and server, Query and View development</p>
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+            <!--ToDo: Add link to project page with appropriate filters applied -->
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+            </svg>
+            <h2 class="fw-normal">NOSQL</h2>
+            <p>MongoDB integration</p>
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+</div>
+<div *ngIf="resHostDiv">
+    <h3>Website Hosting Services</h3>
+    <div class="row">
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+            </svg>
+            <h2 class="fw-normal">Heroku</h2>
+            <p> </p>
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+            </svg>
+            <h2 class="fw-normal">Azure</h2>
+            <p></p>
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+            <!--ToDo: Add link to project page with appropriate filters applied -->
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+            </svg>
+            <h2 class="fw-normal">NOSQL</h2>
+            <p>MongoDB integration</p>
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+    </div>
+</div>
+
+<footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>&copy; 2017–2021 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
