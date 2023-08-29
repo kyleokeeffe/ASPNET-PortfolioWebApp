@@ -13,10 +13,7 @@
             {{item}}
         </option>
     </select>
-    <div>
-        Proj type: {{ selectedType }}
-        lang: {{ selectedLang }}
-    </div>
+  
     <div class="card-deck d-sm-flex flex-sm-row align-content-around justify-content-center">
         <app-project-item *ngFor="let projectItem of projectItemListFilt" [projectItem]="projectItem">
 

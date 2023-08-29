@@ -29,6 +29,8 @@
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
+              //"src/assets/stylesheets/carousel.css",
+              //"src/assets/stylesheets/cover.css"
             ],
             "scripts": []
           },
