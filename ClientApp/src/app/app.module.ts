@@ -32,6 +32,7 @@ import { ServicesComponent } from './services/services.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'projects/:filter', component: ProjectsComponent },
       { path: 'projects', component: ProjectsComponent },
       { path: 'about', component: AboutComponent },
       { path: 'services', component: ServicesComponent },
