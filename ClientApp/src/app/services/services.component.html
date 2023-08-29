@@ -4,45 +4,47 @@
             aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
             <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+                <rect class="carousel-rect" width="100%" height="100%" />
+                <!--<rect width="100%" height="100%" fill="var(--bs-secondary-color)" />-->
             </svg>
             <div class="container">
                 <div class="carousel-caption text-start">
                     <h1>Web Development</h1>
-                    <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.
+                    <p class="opacity-75">Web app and site creation and design
                     </p>
-                    <p><a (click)="ShowWebDev()" class="btn btn-lg btn-primary">Sign up today</a></p>
+                    <p><a (click)="ShowWebDev()" class="btn btn-lg btn-primary">View Details</a></p>
                 </div>
             </div>
         </div>
         <div class="carousel-item">
             <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+                <rect class="carousel-rect" width="100%" height="100%" />
             </svg>
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Standalone Software</h1>
-                    <p>Some representative placeholder content for the second slide of the carousel.</p>
-                    <p><a (click)="ShowStandProg()" class="btn btn-lg btn-primary">Learn more</a></p>
+                    <p>Standalone software development from inception to production using a range of frameworks</p>
+                    <p><a (click)="ShowStandProg()" class="btn btn-lg btn-primary">View Details</a></p>
                 </div>
             </div>
         </div>
         <div class="carousel-item">
             <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+                <rect class="carousel-rect" width="100%" height="100%"  />
             </svg>
             <div class="container">
                 <div class="carousel-caption text-end">
                     <h1>Database Administration</h1>
-                    <p>Some representative placeholder content for the third slide of this carousel.</p>
-                    <p><a (click)="ShowDbAdmin()" class="btn btn-lg btn-primary">Browse gallery</a></p>
+                    <p>Database client and server management services</p>
+                    <p><a (click)="ShowDbAdmin()" class="btn btn-lg btn-primary">View Details</a></p>
                 </div>
             </div>
         </div>
@@ -50,13 +52,13 @@
         <div class="carousel-item">
             <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+                <rect class="carousel-rect" width="100%" height="100%"  />
             </svg>
             <div class="container">
                 <div class="carousel-caption text-end">
                     <h1>Service Hosting</h1>
-                    <p>Some representative placeholder content for the third slide of this carousel.</p>
-                    <p><a (click)="ShowResHost()" class="btn btn-lg btn-primary">Browse gallery</a></p>
+                    <p>Website hosting management using a range of hosting services.</p>
+                    <p><a (click)="ShowResHost()" class="btn btn-lg btn-primary">View Details</a></p>
                 </div>
             </div>
         </div>
@@ -81,7 +83,7 @@
             </svg>
             <h2 class="fw-normal">Full Stack</h2>
             <p> MEAN Stack, ASP.Net, EJS</p>
-            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+            <p><a class="btn btn-secondary" [routerLink]="['/projects','WebApp']">View Projects &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
             <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +93,7 @@
             </svg>
             <h2 class="fw-normal">Traditional Web Dev</h2>
             <p>HTML5, CSS3, JavaScript</p>
-            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+            <p><a class="btn btn-secondary" href="#">View Projects &raquo;</a></p>
             <!--ToDo: Add link to project page with appropriate filters applied -->
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
@@ -102,7 +104,7 @@
             </svg>
             <h2 class="fw-normal">Heading</h2>
             <p>And lastly this, the third column of representative placeholder content.</p>
-            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+            <p><a class="btn btn-secondary" href="#">View Projects &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
 </div>
@@ -216,7 +218,4 @@
     </div>
 </div>
 
-<footer class="container">
-    <p class="float-end"><a href="#">Back to top</a></p>
-    <p>&copy; 2017–2021 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-</footer>
+
