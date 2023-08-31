@@ -6,6 +6,7 @@ body {
   padding-top: 3rem;
   padding-bottom: 3rem;
   color: rgb(var(--bs-tertiary-color-rgb));
+
 }
 
 
@@ -15,6 +16,7 @@ body {
 /* Carousel base class */
 .carousel {
   margin-bottom: 4rem;
+
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -59,6 +61,10 @@ body {
 
 /* rtl:end:remove */
 
+.cover-container {
+  width: 500px;
+  border: 5px solid red;
+}
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
