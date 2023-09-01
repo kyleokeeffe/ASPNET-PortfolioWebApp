@@ -7,7 +7,17 @@ namespace PortfolioWebApp
     {
         public static void Main(string[] args)
         {
+            var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  policy =>
+                                  {
+                                      policy.WithOrigins("localhost:4200").AllowAnyMethod().AllowAnyHeader();
+                                      
+                                  });
+            });
             var connection = String.Empty;
             if (builder.Environment.IsDevelopment())
             {
@@ -37,7 +47,7 @@ namespace PortfolioWebApp
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
-
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.MapControllerRoute(
                 name: "default",

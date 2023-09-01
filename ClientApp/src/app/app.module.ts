@@ -13,6 +13,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectItemComponent } from './project-item/project-item.component';
 import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './services/services.component';
+import { RegisterComponent } from './register/register.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ServicesComponent } from './services/services.component';
     ProjectsComponent,
     ProjectItemComponent,
     AboutComponent,
-    ServicesComponent
+    ServicesComponent,
+    RegisterComponent,
+    UserDetailsComponent
 
 
   ],
@@ -36,6 +40,8 @@ import { ServicesComponent } from './services/services.component';
       { path: 'projects', component: ProjectsComponent },
       { path: 'about', component: AboutComponent },
       { path: 'services', component: ServicesComponent },
+      { path: 'register', component: RegisterComponent },
+      { path: 'user-details', component: UserDetailsComponent },
     ])
   ],
   providers: [],
