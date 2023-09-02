@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using PortfolioWebApp.DB;
+using PortfolioWebApp.Models;
 using System;
 
 namespace PortfolioWebApp
@@ -29,7 +31,7 @@ namespace PortfolioWebApp
                 connection = Environment.GetEnvironmentVariable("AZURE_SQL_CONNECTIONSTRING");
             }
 
-            builder.Services.AddDbContext<UserDbContext>(options =>
+            builder.Services.AddDbContext<DatabaseContext>(options =>
                 options.UseSqlServer(connection));
             // Add services to the container.
 
@@ -55,14 +57,14 @@ namespace PortfolioWebApp
 
             app.MapFallbackToFile("index.html");
 
-            app.MapGet("/User", (UserDbContext context) =>
+            app.MapGet("/User", (DatabaseContext context) =>
             {
-                return context.User.ToList();
+                return context.Users.ToList();
             })
             .WithName("GetUsers");
             //.WithOpenApi();
 
-            app.MapPost("/User", (User user, UserDbContext context) =>
+            app.MapPost("/User", (User user, DatabaseContext context) =>
             {
                 context.Add(user);
                 context.SaveChanges();
@@ -75,20 +77,20 @@ namespace PortfolioWebApp
             app.Run();
         }
     }
-    public class User
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Password { get; set; }
-    }
+    //public class User
+    //{
+    //    public int Id { get; set; }
+    //    public string Name { get; set; }
+    //    public string Password { get; set; }
+    //}
 
-    public class UserDbContext : DbContext { 
-    public UserDbContext(DbContextOptions<UserDbContext> options) : base(options)
-        {
+    //public class UserDbContext : DbContext { 
+    //public UserDbContext(DbContextOptions<UserDbContext> options) : base(options)
+    //    {
 
-        }
-        public DbSet<User> User { get; set; }
-    }
+    //    }
+    //    public DbSet<User> User { get; set; }
+    //}
 
 
 }
