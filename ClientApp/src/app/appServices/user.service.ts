@@ -7,7 +7,8 @@ import { User } from '../models/user.model';
 })
 export class UserService {
   formData: User = new User();
-  readonly baseURL = ""//find url to use- perhaps need to set static ip in config
+  readonly baseURL = "https://localhost:7193"//find url to use- perhaps need to set static ip in config
+  //readonly baseURL = "https://localhost:44453"//find url to use- perhaps need to set static ip in config
   list: User[]=[];
 
 

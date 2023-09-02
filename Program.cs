@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using PortfolioWebApp.DB;
 using PortfolioWebApp.Models;
 using System;
 
@@ -16,7 +15,8 @@ namespace PortfolioWebApp
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                                   policy =>
                                   {
-                                      policy.WithOrigins("localhost:4200").AllowAnyMethod().AllowAnyHeader();
+                                      policy.WithOrigins("https://localhost:44453/").AllowAnyMethod().AllowAnyHeader();
+                                      //policy.WithOrigins("https://localhost:7193/").AllowAnyMethod().AllowAnyHeader();
                                       
                                   });
             });
@@ -31,7 +31,7 @@ namespace PortfolioWebApp
                 connection = Environment.GetEnvironmentVariable("AZURE_SQL_CONNECTIONSTRING");
             }
 
-            builder.Services.AddDbContext<DatabaseContext>(options =>
+            builder.Services.AddDbContext<UserDbContext>(options =>
                 options.UseSqlServer(connection));
             // Add services to the container.
 
@@ -57,14 +57,14 @@ namespace PortfolioWebApp
 
             app.MapFallbackToFile("index.html");
 
-            app.MapGet("/User", (DatabaseContext context) =>
+            app.MapGet("/User", (UserDbContext context) =>
             {
-                return context.Users.ToList();
+                return context.User.ToList();
             })
             .WithName("GetUsers");
             //.WithOpenApi();
 
-            app.MapPost("/User", (User user, DatabaseContext context) =>
+            app.MapPost("/User", (User user, UserDbContext context) =>
             {
                 context.Add(user);
                 context.SaveChanges();
@@ -77,20 +77,41 @@ namespace PortfolioWebApp
             app.Run();
         }
     }
-    //public class User
+    public class User
+    {
+        public int Id { get; set; }
+        public string Username { get; set; } = string.Empty;
+        public byte[] PasswordHash { get; set; } = new byte[32];
+        public byte[] PasswordSalt { get; set; } = new byte[32];
+        public string RefreshToken { get; set; } = string.Empty;
+        public DateTime TokenCreated { get; set; }
+        public DateTime TokenExpires { get; set; }
+    }
+
+    public class UserDbContext : DbContext { 
+    public UserDbContext(DbContextOptions<UserDbContext> options) : base(options)
+        {
+
+        }
+        public DbSet<User> User { get; set; }
+    }
+
+
+    //public class DatabaseContext : DbContext
     //{
-    //    public int Id { get; set; }
-    //    public string Name { get; set; }
-    //    public string Password { get; set; }
-    //}
 
-    //public class UserDbContext : DbContext { 
-    //public UserDbContext(DbContextOptions<UserDbContext> options) : base(options)
+    //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     //    {
-
+    //        //optionsBuilder.UseSqlServer
+    //        base.OnConfiguring(optionsBuilder);
     //    }
-    //    public DbSet<User> User { get; set; }
-    //}
+    //    //public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
+    //    //{
 
+    //    //}
+    //    public DbSet<User> Users { get; set; }
+    //    //users=>Set<User>()
+
+    //}
 
 }

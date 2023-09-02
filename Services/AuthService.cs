@@ -1,20 +1,21 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using PortfolioWebApp.Interfaces;
+using PortfolioWebApp.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 
 namespace PortfolioWebApp.Services
 {
-    public class AuthService
-    {
+
         public class AuthService : IAuthService
         {
-            private readonly DatabaseContext _context;
+            private readonly UserDbContext _context;
             private readonly IConfiguration _configuration;
             private readonly IHttpContextAccessor _httpContextAccessor;
 
-            public AuthService(DatabaseContext context, IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
+            public AuthService(UserDbContext context, IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
             {
                 _context = context;
                 _configuration = configuration;
@@ -23,7 +24,7 @@ namespace PortfolioWebApp.Services
 
             public async Task<AuthResponseDTO> Login(UserDTO request)
             {
-                var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == request.Username);
+                var user = await _context.User.FirstOrDefaultAsync(u => u.Username == request.Username);
                 if (user == null)
                 {
                     return new AuthResponseDTO { Message = "User not found." };
@@ -58,7 +59,7 @@ namespace PortfolioWebApp.Services
                     PasswordSalt = passwordSalt
                 };
 
-                _context.Users.Add(user);
+                _context.User.Add(user);
                 await _context.SaveChangesAsync();
 
                 return user;
@@ -84,7 +85,7 @@ namespace PortfolioWebApp.Services
             public async Task<AuthResponseDTO> RefreshToken()
             {
                 var refreshToken = _httpContextAccessor?.HttpContext?.Request.Cookies["refreshToken"];
-                var user = await _context.Users.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
+                var user = await _context.User.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
                 if (user == null)
                 {
                     return new AuthResponseDTO { Message = "Invalid Refresh Token" };
@@ -130,8 +131,8 @@ namespace PortfolioWebApp.Services
                 List<Claim> claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Name, user.Username),
-                new Claim(ClaimTypes.Role, user.Role)
+                new Claim(ClaimTypes.Name, user.Username)
+                //new Claim(ClaimTypes.Role, user.Role)
             };
 
                 var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(
@@ -179,4 +180,4 @@ namespace PortfolioWebApp.Services
             }
         }
     }
-}
+
