@@ -71,6 +71,15 @@ namespace PortfolioWebApp
         public string Name { get; set; }
         public string Password { get; set; }
     }
+    public class Project
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public string Language { get; set; }
+        public string Description { get; set; }
+
+    }
 
     public class UserDbContext : DbContext { 
     public UserDbContext(DbContextOptions<UserDbContext> options) : base(options)
@@ -78,6 +87,7 @@ namespace PortfolioWebApp
 
         }
         public DbSet<User> User { get; set; }
+        public DbSet<Project> Projects { get; set; }
     }
 
 
