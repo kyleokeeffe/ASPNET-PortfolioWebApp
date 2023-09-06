@@ -6,14 +6,14 @@ import { Project } from '../models/project-model.model';
   providedIn: 'root'
 })
 export class ProjectService {
-  private projectsUrl = 'api/projects/'
+  private projectsUrl = 'api/projects'
 
   constructor(private http: HttpClient) { }
   getProjects(): Observable<Project[]> {
     //return this.http.get<Project[]>(this.projectsUrl)
     return this.http.get<Project[]>(this.projectsUrl)
       .pipe(
-        catchError(this.handleError<Project[]>('getHeroes', []))
+        catchError(this.handleError<Project[]>('getProjects', []))
       );
   }
   private handleError<T>(operation = 'operation', result?: T) {
