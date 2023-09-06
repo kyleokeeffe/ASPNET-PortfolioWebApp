@@ -13,6 +13,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectItemComponent } from './project-item/project-item.component';
 import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './services/services.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,8 @@ import { ServicesComponent } from './services/services.component';
     ProjectsComponent,
     ProjectItemComponent,
     AboutComponent,
-    ServicesComponent
-
+    ServicesComponent,
+    ProjectDetailsComponent
 
   ],
   imports: [
@@ -36,6 +37,7 @@ import { ServicesComponent } from './services/services.component';
       { path: 'projects', component: ProjectsComponent },
       { path: 'about', component: AboutComponent },
       { path: 'services', component: ServicesComponent },
+      { path: 'project-details/:id', component: ProjectDetailsComponent }
     ])
   ],
   providers: [],
