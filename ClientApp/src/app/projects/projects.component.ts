@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ProjectService } from '../appServices/project.service';
+import { RepositoryService } from '../appServices/repository.service';
 import { Project } from '../models/project-model.model';
 import { ProjectItem } from '../projectItem';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css']
+  styleUrls: ['./projects.component.css'],
+  providers: [RepositoryService]
 })
 export class ProjectsComponent implements OnInit {
 
@@ -26,7 +28,7 @@ export class ProjectsComponent implements OnInit {
    selectedType="All"
    selectedLang="All"
 
-  projectItemList: Project[]=[];
+  projectItemList: Project[] = [];
   //  {
   //    id: 0,
   //    name: 'Student Records Application',
@@ -94,11 +96,13 @@ export class ProjectsComponent implements OnInit {
   //    link: 'http://www.google.ca'
   //  }
   //];
-  public projectItemListFilt: ProjectItem[] = this.projectItemList;
+  public projectItemListFilt: ProjectItem[] = [];
 
-  constructor(private route: ActivatedRoute, private projectService:ProjectService) {
-    this.projectService.getProjects()
-      .subscribe(projects => this.projectItemList = projects);
+  constructor(private route: ActivatedRoute, private projectService: ProjectService, private repo: RepositoryService) {
+   // this.projectService.getProjects()
+    // .subscribe(projects => this.projectItemList = projects);
+    this.projectItemList = this.repo.getProjects();
+    this.projectItemListFilt = this.projectItemList;
   }
 
   ngOnInit(): void {
