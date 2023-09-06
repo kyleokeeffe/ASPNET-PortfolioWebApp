@@ -135,4 +135,6 @@ export class ProjectsComponent implements OnInit {
       this.projectItemListFilt = this.projectItemList.filter(item => item.language == this.selectedLang).filter(item => item.type == this.selectedType);
     }
   }
+
+
 }

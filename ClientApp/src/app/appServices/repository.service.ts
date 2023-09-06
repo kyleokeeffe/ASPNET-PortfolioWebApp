@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Project } from '../models/project-model.model';
+import { ProjectItem } from '../projectItem';
 
 @Injectable({
   providedIn: 'root'
@@ -78,5 +79,10 @@ export class RepositoryService {
 
    getProjects() {
     return this.projectItemList;
+   }
+  getProject(id: string):ProjectItem|undefined {
+
+
+    return this.projectItemList.find(x => x.id == +id);
   }
 }
