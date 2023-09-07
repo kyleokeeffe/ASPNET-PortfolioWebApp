@@ -1,2 +1,8 @@
 <p>Project detail page currently under development</p>
-<p>Project Details page:{{ thisProject.name }}</p>
+<p>Project Details</p>
+
+    {{ thisProject.name }}
+    Description:{{ thisProject.description}}
+    Language:{{ thisProject.language}}
+    Project Type:{{ thisProject.type}}
+    GitHub Link:<a href="{{thisProject.link}}"> {{thisProject.link}}</a>
