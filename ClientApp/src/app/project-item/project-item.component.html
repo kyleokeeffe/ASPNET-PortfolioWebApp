@@ -1,10 +1,21 @@
-<div class="m-2 card h-100" style="width:400px">
-    <div class="card-body" (click)="goToProjectDetail(this.projectItem)">
+<!--<div class="m-2 card h-100" style="width:400px">-->
+<a id="projectCard" [routerLink]="" (click)="goToProjectDetail(this.projectItem)">
+
+
+    <!--<div class="card-body text-start" (click)="goToProjectDetail(this.projectItem)">-->
+    <div class="card-body text-start">
         <h4 class="card-title">{{ projectItem.name }}</h4>
         <p class="card-text">Description<br>{{ projectItem.description }}</p>
-        <p class="card-text">Role<br>Team contributor</p>
-        <p class="card-text"><a href='{{ projectItem.link }}'>Link to code (GitHub)</a><br></p>
+        <p class="card-text">
+         <!--   <div>
+                <a href='{{ projectItem.link }}'>
+                    Link to code (GitHub)
+                </a>
+            </div>-->
+            <br>
+        <!--</p>-->
 
+        <!--<img class="card-img" [src]="projectItem.photo" alt="Image of project screenshot" >-->
     </div>
-    <img class="card-img-bottom" [src]="projectItem.photo" alt="Image of project screenshot" style="width:100%">
-</div>
+</a>
+<!--</div>-->
