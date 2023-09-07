@@ -15,7 +15,7 @@ export class RepositoryService {
       language: 'CSharp',
       description: 'Software to record, access and manage the academic records for multiple users. Developed using C# WPF GUI interface.',
       photo: '../../assets/images/studentTracking.PNG',
-      link: 'http://www.google.ca'
+      link: 'https://github.com/kyleokeeffe/CSharp-Sem2-StudentAccountTracking'
     },
     {
       id: 1,
@@ -24,7 +24,7 @@ export class RepositoryService {
       language: 'UML',
       description: 'Contributed to development of software requirements documentation for a chatbot browser add-on.',
       photo: '../../assets/images/chatBotDiagram.png',
-      link: 'http://www.google.ca'
+      link: ''
     },
     {
       id: 2,
@@ -33,7 +33,7 @@ export class RepositoryService {
       language: 'Java',
       description: 'Software for simulating a quiz. Developed using Java with JOptionsPane GUI interface.',
       photo: '../../assets/images/quizSimulation.png',
-      link: 'http://www.google.ca'
+      link: 'https://github.com/kyleokeeffe/Java-Sem3-JavaProgLab2'
     },
     {
       id: 3,
@@ -42,27 +42,27 @@ export class RepositoryService {
       language: 'Python',
       description: 'Python command-line software for conducting image editing operations from natural language requests.',
       photo: '../../assets/images/logo.png',
-      link: 'http://www.google.ca'
+      link: 'https://github.com/kyleokeeffe/NaturalLanguageImageProc'
 
     },
     {
       id: 4,
-      name: 'Publisher Pattern Implmentation',
+      name: 'Publisher Pattern Implementation',
       type: 'Standalone',
       language: 'CSharp',
       description: 'C# software implementing Publisher pattern in WPF.',
       photo: '../../assets/images/logo.png',
-      link: 'http://www.google.ca'
+      link: 'https://github.com/kyleokeeffe/Publisher-CSharp'
 
     },
     {
       id: 5,
       name: 'Personal Portfolio Website',
       type: 'WebApp',
-      language: 'Angular',
-      description: 'Portfolio website implemented using multiple frameworks. Currently completed frameworks: EJS, Angular/ASP.NET.',
+      language: 'EJS',
+      description: 'Early iteration of this website implemented using EJS.', 
       photo: '../../assets/images/chatBotDiagram.png',
-      link: 'http://www.google.ca'
+      link: 'https://github.com/kyleokeeffe/NodeJS-Sem3-ExpressPorfolio'
 
     },
     {
@@ -72,8 +72,17 @@ export class RepositoryService {
       language: 'Java',
       description: 'Standalone Java software for QA regression testing automation.',
       photo: '../../assets/images/logo.png',
-      link: 'http://www.google.ca'
-    }
+      link: ''
+     },
+     {
+       id: 7,
+       name: 'Personal Portfolio Website',
+       type: 'WebApp',
+       language: 'CSharp',
+       description: 'ASP.NET/Angular implementation of this website.',
+       photo: '../../assets/images/logo.png',
+       link: 'https://github.com/kyleokeeffe/PortfolioWebApp'
+     }
   ];
   constructor() { }
 
